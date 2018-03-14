@@ -1,39 +1,46 @@
 # hp2
 
-Welcome to ProjectTemplate!
+This project `House Prices from Kaggle` uses ProjectTemplate package.
 
-This file introduces you to ProjectTemplate, but you should eventually replace
-the contents of this file with an introduction to your project. People who
-work with your data in the future will thank you for it, including your future
-self.
+As a small test we used Azure ML side by side and ended up doing a large amount of preprocessing in Azure ML Studio.
+Our experience was a bit mixed, some things are easy others are less straightforward. 
+So for this project we start with the preprocessed file from Azure this included:
+- recoding to ordered factors (especially quality assessments)
+- simplified feature engineering like 'HasLotFrontage' or 'HasLandContour'
+- fix missing values
+- convert combined columns constructs like 'Condition1' and 'Condition2' to indicator values
+- Normalize data Zscore
+- SalePriceLog, MiscValLog
+- Some extra small feature engineering like 'HouseDirectSoldAfterBuilt'
+- Complete conversion to indicator values has not been applied
 
-ProjectTemplate is an R package that helps you organize your statistical
-analysis projects. Since you're reading this file, we'll assume that you've
-already called `create.project()` to set up this project and all of its
-contents.
 
-To load your new project, you'll first need to `setwd()` into the directory
-where this README file is located. Then you need to run the following two
-lines of R code:
+## Still some project reminders below.
 
-	library('ProjectTemplate')
-	load.project()
+1. Prepare Problem
+a) Load libraries
+b) Load dataset
+c) Split-out validation dataset
 
-After you enter the second line of code, you'll see a series of automated
-messages as ProjectTemplate goes about doing its work. This work involves:
-* Reading in the global configuration file contained in `config`.
-* Loading any R packages you listed in he configuration file.
-* Reading in any datasets stored in `data` or `cache`.
-* Preprocessing your data using the files in the `munge` directory.
+2. Summarize Data
+a) Descriptive statistics
+b) Data visualizations
 
-Once that's done, you can execute any code you'd like. For every analysis
-you create, we'd recommend putting a separate file in the `src` directory.
-If the files start with the two lines mentioned above:
+3. Prepare Data
+a) Data Cleaning
+b) Feature Selection
+c) Data Transforms
 
-	library('ProjectTemplate')
-	load.project()
+4. Evaluate Algorithms
+a) Test options and evaluation metric
+b) Spot Check Algorithms
+c) Compare Algorithms
 
-You'll have access to all of your data, already fully preprocessed, and
-all of the libraries you want to use.
+5. Improve Accuracy
+a) Algorithm Tuning
+b) Ensembles
 
-For more details about ProjectTemplate, see http://projecttemplate.net
+6. Finalize Model
+a) Predictions on validation dataset
+b) Create standalone model on entire training dataset
+c) Save model for later use

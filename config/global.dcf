@@ -1,15 +1,15 @@
 version: 0.8
 data_loading: TRUE
 data_loading_header: TRUE
-data_ignore:
+data_ignore: train.csv, test.csv
 cache_loading: TRUE
 recursive_loading: FALSE
 munging: TRUE
 logging: FALSE
 logging_level: INFO
-load_libraries: FALSE
-libraries: reshape, plyr, dplyr, ggplot2, stringr, lubridate
-as_factors: TRUE
+load_libraries: TRUE
+libraries: reshape, plyr, dplyr, ggplot2, stringr, lubridate, data.table, testthat, tidyverse, glmnet, ICC, ranger, C50, mlbench, gridExtra, parallel, caret, corrplot, GGally, e1071, xgboost, Metrics, ggthemes, randomForest, Boruta
+as_factors: FALSE
 data_tables: FALSE
 attach_internal_libraries: FALSE
 cache_loaded_data:  TRUE
